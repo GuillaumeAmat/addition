@@ -1,0 +1,11 @@
+{
+  "name": "je-calcule",
+  "version": "0.1.0",
+  "description": "Aide aux calculs",
+  "license": "GPLv3",
+  "private": true,
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "marionette": "~2.4.1"
+  }
+}
