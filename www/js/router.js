@@ -4,13 +4,17 @@ define([
 
 	'app',
 	'backbone',
-	'view/home'
+	'view/home',
+	'view/level',
+	'view/game'
 ],
 function (
 
 	app,
 	Backbone,
-	homeView
+	homeView,
+	levelView,
+	gameView
 ) {
 
 	'use strict';
@@ -21,6 +25,8 @@ function (
 		routes: {
 
 			'': 'routeDefault',
+			'level/:operator': 'routeLevel',
+			'game/:operator/:level': 'routeGame',
 		},
 
 		routeDefault: function () {
@@ -31,6 +37,24 @@ function (
 			}
 
 			app.getRegion('screen').show( this._home_view );
+		},
+        
+		routeLevel: function (operator) {
+			app.getRegion('screen').show( new levelView
+                                                ({
+                                                    'operator': operator
+                                                })
+                                        );
+		},
+        
+		routeGame: function (operator, level) {
+
+			app.getRegion('screen').show( new gameView
+                                                ({
+                                                    'operator': operator,
+                                                    'level': level
+                                                })
+                                        );
 		},
 	});
 
