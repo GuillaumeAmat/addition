@@ -15,14 +15,19 @@ function (_, Backbone) {
 
 		initialize: function(options) {
 
-			var self = this;
-
 			this.radio = Backbone.Radio.channel('global');
 
-			this.addRegions({
+			var self = this,
+			regions = this.addRegions({
 
-				screen: '.screen',
-			});
+				'screen': '.screen'
+			}),
+			height = regions.screen.$el.height(),
+			width = height * 320 / 480;
+
+			// console.log(width, height);
+			// regions.screen.$el.width(width)
+
 
 			Marionette.Behaviors.behaviorsLookup = function() {
 

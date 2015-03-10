@@ -1,5 +1,10 @@
 
 
+@green_background: #105c05;
+
+
+
+
 @font-face {
 
 	font-family: 'Lavi';
@@ -12,7 +17,84 @@
 	font-style: normal;
 }
 
-h1 {
 
-    font-family: Lavi;
+
+html, body {
+
+	background-color: @green_background;
+	color: #fff;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.screen {
+
+	background: red;
+	position: relative;
+	width: 320px;
+	height: 100%;
+	margin: auto;
+}
+
+
+
+.title {
+
+	position: absolute;
+	width: 100%;
+	top: 5%;
+	text-align: center;
+
+	h1 {
+
+	    font-family: Lavi;
+		margin: 0;
+	}
+}
+
+
+.home_menu {
+
+	background-color: yellow;
+	position: absolute;
+	bottom: 20%;
+	width: 100%;
+	height: 40%;
+
+	a {
+
+		position: absolute;
+		text-decoration: none;
+		height: 48%;
+
+		img {
+
+			height: 100%;
+		}
+	}
+
+	.menu_addition {
+
+		top: 0;
+		right: 52%;
+	}
+
+	.menu_soustraction {
+
+		top: 0;
+		left: 50%;
+	}
+
+	.menu_multiplication {
+
+		bottom: 0;
+		right: 50%;
+	}
+
+	.menu_division {
+
+		bottom: 0;
+		left: 50%;
+	}
 }
