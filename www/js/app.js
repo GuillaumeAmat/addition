@@ -22,11 +22,14 @@ function (_, Backbone) {
 
 				'screen': '.screen'
 			}),
-			height = regions.screen.$el.height(),
-			width = height * 320 / 480;
+			screen = self.getRegion('screen').$el;
 
-			// console.log(width, height);
-			// regions.screen.$el.width(width)
+
+			$(window).on('resize', function (a, b, c) {
+
+				screen.width( (screen.height() * 320) / 480 );
+			})
+			.trigger('resize');
 
 
 			Marionette.Behaviors.behaviorsLookup = function() {
