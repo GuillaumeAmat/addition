@@ -33,16 +33,19 @@ function (app, templates, $, Backbone)
             "submit": "checkResult",
             "click @ui.numbers": "addNumber",
             "click @ui.nexts": "render",
+            "click @ui.reset": "reset",
         },
         
         ui:
         {
             "numbers": ".number",
             "nexts": ".next",
-            "total": "#resultatUser",
+            "total": "#userResult",
             "keyboard": "#keyboard",
+            "reset": "#reset",
             "win": "#win",
-            "loose": "#loose",
+            "lose": "#lose",
+            "realResult": "#realResult",
         },
 
 
@@ -95,26 +98,41 @@ function (app, templates, $, Backbone)
         {
             this.ui.keyboard.show();
             this.ui.win.hide();
-            this.ui.loose.hide();
+            this.ui.lose.hide();
         },
 
-        checkResult: function()
+
+
+
+
+
+
+        checkResult: function(e)
         {
+            e.preventDefault();
             this.ui.keyboard.hide();
 
-            if (this.ui.total.val() == this.total)
+            if (this.ui.total.html() == this.total)
             {
                 this.ui.win.show();
             }
             else
             {
-                this.ui.loose.show();
+                this.ui.realResult.text(this.total);
+                this.ui.lose.show();
             }
+            this.ui.nexts.focus();
+        },
+
+
+        reset: function(e)
+        {
+            this.ui.total.text('');            
         },
 
         addNumber: function(e)
         {
-            this.ui.total.val(this.ui.total.val() + $(e.target).data("value")); 
+            this.ui.total.append($(e.target).data("value")); 
         },
 
 
