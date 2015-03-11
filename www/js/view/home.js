@@ -19,7 +19,7 @@ define(['app', 'templates', 'jquery', 'backbone'], function (app, templates, $, 
 
 				this.template_title({
 
-					'text': document.webL10n.get('title')
+					'text': document.webL10n.get('game_title')
 				})
 			);
 		}
