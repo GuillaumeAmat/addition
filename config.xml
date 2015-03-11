@@ -28,6 +28,7 @@
     </platform>
     <platform name="firefoxos">
         <icon src="res/icon-60.png" width="60" height="60" />
+        <icon src="res/icon-128.png" width="128" height="128" />
     </platform>
     <platform name="ios">
         <!-- iOS 8.0+ -->
