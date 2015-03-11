@@ -1,3 +1,5 @@
 platforms
-www/bower_components
 node_modules
+www/bower_components
+www/css/app.css
+www/templates/templates.js

@@ -8,7 +8,8 @@
 a {
   text-decoration: none;
 }
-ul {
+ul,
+form {
   margin: 0;
   padding: 0;
 }
@@ -30,6 +31,10 @@ button {
   margin: 0;
   border: 0;
   background-color: transparent;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
 }
 .container {
   position: relative;
@@ -67,14 +72,17 @@ button {
   left: 0;
   bottom: 5.21%;
 }
+.chalk {
+  position: absolute;
+  width: 89.06%;
+  left: 8.44%;
+  bottom: 6.25%;
+}
 .title {
   position: absolute;
-  top: 5%;
   width: 100%;
-  text-align: center;
-  font-family: Lavi;
-  font-size: 59px;
-  margin: 0;
+  left: 0%;
+  bottom: 83.75%;
 }
 .smile {
   position: absolute;
@@ -120,9 +128,12 @@ button {
   text-align: right;
 }
 #keyboard {
+  position: absolute;
   text-align: center;
-  width: 80%;
+  width: 46.875%;
   margin: auto;
+  bottom: 14%;
+  left: 26.56%;
 }
 .buttons_level {
   position: absolute;
@@ -133,12 +144,11 @@ button {
 .button_level {
   margin-bottom: 1.25%;
 }
-.number span,
-#submit span,
-#reset span {
-  position: relative;
-  top: -35%;
-  left: -45%;
+.number {
+  width: 30.66%;
+}
+.number img {
+  width: 100%;
 }
 #win {
   background: url("../img/fireworks.svg") no-repeat;
