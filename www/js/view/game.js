@@ -43,12 +43,10 @@ function (app, templates, $, Backbone)
         {
             "numbers": ".number",
             "nexts": ".next",
-            "total": "#userResult",
             "keyboard": "#keyboard",
             "reset": "#reset",
             "win": "#win",
             "lose": "#lose",
-            "realResult": "#realResult",
 			'calculation': '.calculation'
         },
 
@@ -150,7 +148,10 @@ function (app, templates, $, Backbone)
             }
             else
             {
-                this.ui.realResult.text(this.total);
+                $('#red_line').show();
+                $('#red_line').css("width", $('#userResult').width());
+                $('#good_result').text(this.total);
+                $('#good_result_conteneur').show();
                 this.ui.lose.show();
             }
             this.ui.nexts.focus();
