@@ -12,7 +12,7 @@ function (app, templates, $, Backbone)
     'use strict';
 
 
-  
+
     return Marionette.LayoutView.extend
     ({
 
@@ -20,10 +20,10 @@ function (app, templates, $, Backbone)
 		template_calculation: JST['calculation.html'],
         template_button_number: JST['button_number.html'],
         template_button_next: JST['button_next.html'],
-        
+
         templateHelpers: function()
-        { 
-          
+        {
+
             return {
                         'operator': this.options.operator,
                         'level': this.options.level,
@@ -38,7 +38,7 @@ function (app, templates, $, Backbone)
             "click @ui.nexts": "render",
             "click @ui.reset": "reset",
         },
-        
+
         ui:
         {
             "numbers": ".number",
@@ -53,15 +53,15 @@ function (app, templates, $, Backbone)
         },
 
 
-        
-        
+
+
         onBeforeRender: function()
         {
-            
+
             var level       = this.options.level;
             var number1	= Math.round(Math.random() * Math.pow(10, level));
             var number2	= Math.round(Math.random() * Math.pow(10, level));
- 
+
             switch (this.options.operator)
             {
                 case "1":
@@ -90,17 +90,19 @@ function (app, templates, $, Backbone)
                         this.total = number1 / number2;
                     break;
             }
-            
+
             this._number1 = number1;
             this._number2 = number2;
 
-            
+
             this._line_account = number1+" "+this._operator_type+" "+number2+" = ";
 
         },
 
         onRender:function()
         {
+            app.radio.command('buttonBackHome:show');
+
             this.ui.keyboard.show();
             this.ui.win.hide();
             this.ui.lose.hide();
@@ -157,13 +159,13 @@ function (app, templates, $, Backbone)
 
         reset: function(e)
         {
-            //this.ui.total.text('');            
-            $('#userResult').text('');            
+            //this.ui.total.text('');
+            $('#userResult').text('');
         },
 
         addNumber: function(e)
         {
-           $('#userResult').append($(e.target).data("value")); 
+           $('#userResult').append($(e.target).data("value"));
         },
 
 

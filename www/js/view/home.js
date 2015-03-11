@@ -15,6 +15,8 @@ define(['app', 'templates', 'jquery', 'backbone'], function (app, templates, $, 
 
 		onRender: function () {
 
+			app.radio.command('buttonBackHome:hide');
+
 			this.ui.title.html(
 
 				this.template_title({

@@ -31,30 +31,30 @@ function (
 
 		routeDefault: function () {
 
-			if ( !this._home_view ) {
-
-				this._home_view = new homeView();
-			}
-
-			app.getRegion('screen').show( this._home_view );
+			app.getRegion('screen').show( new homeView() );
 		},
-        
+
 		routeLevel: function (operator) {
-			app.getRegion('screen').show( new levelView
-                                                ({
-                                                    'operator': operator
-                                                })
-                                        );
+
+			app.getRegion('screen').show(
+
+				new levelView ({
+
+                    'operator': operator
+                })
+            );
 		},
-        
+
 		routeGame: function (operator, level) {
 
-			app.getRegion('screen').show( new gameView
-                                                ({
-                                                    'operator': operator,
-                                                    'level': level
-                                                })
-                                        );
+			app.getRegion('screen').show(
+
+				new gameView ({
+
+                    'operator': operator,
+                    'level': level
+                })
+            );
 		},
 	});
 

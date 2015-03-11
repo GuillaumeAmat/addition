@@ -6,8 +6,16 @@ define([
 	'backbone',
 	'marionette',
 	'backbone.radio',
+	'view/buttonBackHome'
 ],
-function (_, Backbone) {
+function (
+
+	_,
+	Backbone,
+	Marionette,
+	radio,
+	buttonBackHomeView
+) {
 
 	'use strict';
 
@@ -23,7 +31,8 @@ function (_, Backbone) {
 
 			this.addRegions({
 
-				'screen': '.screen'
+				'screen': '.screen',
+				'button_back_home': '.button_back_home'
 			});
 
 
@@ -38,6 +47,22 @@ function (_, Backbone) {
 
 				return self.behaviors;
 			}
+
+
+			this.view.buttonBackHomeView = new buttonBackHomeView();
+			this.view.buttonBackHomeView.$el.hide();
+
+			self.getRegion('button_back_home').show( self.view.buttonBackHomeView );
+
+			this.radio.comply('buttonBackHome:show', function () {
+
+				self.view.buttonBackHomeView.$el.show();
+			});
+
+			this.radio.comply('buttonBackHome:hide', function () {
+
+				self.view.buttonBackHomeView.$el.hide();
+			});
 		},
 
 		onStart: function (options) {

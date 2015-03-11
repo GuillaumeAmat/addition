@@ -8,12 +8,12 @@ define(['app', 'templates', 'jquery', 'backbone'], function (app, templates, $, 
 		template: JST['level.html'],
         template_button: JST['button_level.html'],
 		template_title: JST['title.html'],
-        
-        templateHelpers: function() { 
-            
+
+        templateHelpers: function() {
+
             return { 'operator': this.options.operator };
-            
-            
+
+
         },
 
  		ui: {
@@ -21,10 +21,12 @@ define(['app', 'templates', 'jquery', 'backbone'], function (app, templates, $, 
 			'title': '.title'
 		},
 
-     
-        onRender: function() { 
 
- 			this.ui.title.html(
+        onRender: function() {
+
+			app.radio.command('buttonBackHome:show');
+
+			this.ui.title.html(
 
 				this.template_title({
 
@@ -38,9 +40,9 @@ define(['app', 'templates', 'jquery', 'backbone'], function (app, templates, $, 
 
                 $("#button_level_"+i, this.$el).html(html);
             }
-            
-            
+
+
         },
-        
+
 	});
 });
