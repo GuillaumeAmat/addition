@@ -18,6 +18,25 @@
 }
 
 
+a {
+  text-decoration:none;  
+}
+
+ul
+{
+    margin:0;
+    padding:0;
+
+}
+
+
+li
+{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
 
 html, body {
 
@@ -26,6 +45,13 @@ html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
+}
+
+button {
+    padding:0;
+    margin:0;
+    border:0;
+	background-color:transparent;
 }
 
 .screen {
@@ -98,15 +124,6 @@ html, body {
 		left: 50%;
 	}
 }
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance:textfield;
-}
 
 #userResult
 {
@@ -115,7 +132,44 @@ input[type=number] {
     height:23px;
     text-align:right;
 }
+#keyboard
+{
+    
+    text-align:center;
+    width:80%;
+    margin:auto;
+}
+
+.buttons_level
+{
+    position:absolute;
+    left:16.25%;
+    bottom:13.96%;
+    width:67.5%;
+}
+
+.button_level
+{
+    margin-bottom:1.25%
+}
+
 .next
 {
-    background:url("../img/button_next.svg") no-repeat;
+}
+
+.number span,  #submit span, #reset span
+{
+    position:relative;
+    top: -35%;
+    left: -45%;
+}
+
+
+
+#win
+{
+    background:url("../img/fireworks.svg") no-repeat;
+    height: 30%;
+    bottom: 10%;
+    position: absolute;
 }
