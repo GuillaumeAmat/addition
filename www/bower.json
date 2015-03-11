@@ -1,7 +1,7 @@
 {
   "name": "je-calcule",
   "version": "0.1.0",
-  "description": "Aide aux calculs",
+  "description": "Application mobile et web d'entraînement au calcul pour les enfants",
   "license": "GPLv3",
   "private": true,
   "dependencies": {
