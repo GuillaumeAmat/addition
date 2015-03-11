@@ -74,6 +74,9 @@
 
     <content src="index.html" />
     <access origin="*" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="DisallowOverscroll" value="true"/>
+
     <engine name="firefoxos" version="3.6.3" />
     <engine name="android" version="3.7.1" />
 </widget>
