@@ -18,16 +18,18 @@ function (_, Backbone) {
 			this.radio = Backbone.Radio.channel('global');
 
 			var self = this,
-			regions = this.addRegions({
+			container = $('.container');
+
+
+			this.addRegions({
 
 				'screen': '.screen'
-			}),
-			screen = self.getRegion('screen').$el;
+			});
 
 
-			$(window).on('resize', function (a, b, c) {
+			$(window).on('resize', function () {
 
-				screen.width( (screen.height() * 320) / 480 );
+				container.width( (container.height() * 320) / 480 );
 			})
 			.trigger('resize');
 

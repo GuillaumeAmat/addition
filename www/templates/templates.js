@@ -16,7 +16,7 @@ this["JST"]["home.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<section class="title">\n    <h1>Je calcule</h1>\n    <img src="img/title_smile.svg" class="smile" />\n</section>\n\n\n<section class="home_menu">\n    <a class="menu_addition" href="#level/1">\n        <img src="img/menu_addition.svg" alt="Addition" />\n    </a>\n    <a class="menu_soustraction" href="#level/2">\n        <img src="img/menu_soustraction.svg" alt="Soustraction" />\n    </a>\n    <a class="menu_multiplication" href="#level/3">\n        <img src="img/menu_multiplication.svg" alt="Multiplication" />\n    </a>\n    <a class="menu_division" href="#level/4">\n        <img src="img/menu_division.svg" alt="Division" />\n    </a>\n</section>\n';
+__p += '<h1 class="title">Je calcule</h1>\n<img src="img/title_smile.svg" class="smile" />\n\n\n<section class="home_menu">\n    <a class="menu_addition" href="#level/1">\n        <img src="img/menu_addition.svg" alt="Addition" />\n    </a>\n    <a class="menu_soustraction" href="#level/2">\n        <img src="img/menu_soustraction.svg" alt="Soustraction" />\n    </a>\n    <a class="menu_multiplication" href="#level/3">\n        <img src="img/menu_multiplication.svg" alt="Multiplication" />\n    </a>\n    <a class="menu_division" href="#level/4">\n        <img src="img/menu_division.svg" alt="Division" />\n    </a>\n</section>\n';
 
 }
 return __p

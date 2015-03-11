@@ -28,76 +28,118 @@ html, body {
 	margin: 0;
 }
 
-.screen {
+.container {
 
-	background: red;
 	position: relative;
 	width: 320px;
 	height: 100%;
 	margin: auto;
 }
 
+.screen {
 
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+
+.gribouille {
+
+	position: absolute;
+
+	&.toto {
+
+		width: 11%;
+		left: 86.875%;
+		bottom: 10.2%;
+	}
+
+	&.calcul {
+
+		width: 19%;
+		left: 80%;
+		bottom: 94%;
+	}
+
+	&.morpion {
+
+		width: 10%;
+		left: 3%;
+		bottom: 71%;
+	}
+}
+
+.chalk_support {
+
+	position: absolute;
+	width: 100%;
+	height: 3.125%;
+	left: 0;
+	bottom: 5.21%;
+}
 
 .title {
 
 	position: absolute;
-	width: 100%;
 	top: 5%;
-	text-align: center;
-
-	h1 {
-
-	    font-family: Lavi;
-		margin: 0;
-	}
-}
-
-
-.home_menu {
-
-	background-color: yellow;
-	position: absolute;
-	bottom: 20%;
 	width: 100%;
-	height: 40%;
+	text-align: center;
+	font-family: Lavi;
+	font-size: 59px;
+	margin: 0;
+}
 
-	a {
+.smile {
 
-		position: absolute;
-		text-decoration: none;
-		height: 48%;
+	position: absolute;
+	left: 33.75%;
+	bottom: 68.125%;
+	width: 32.5%;
+}
 
-		img {
 
-			height: 100%;
-		}
-	}
+.menu_addition,
+.menu_soustraction,
+.menu_multiplication,
+.menu_division {
 
-	.menu_addition {
+	position: absolute;
+	text-decoration: none;
+	width: 23%;
+	height: 23%;
 
-		top: 0;
-		right: 52%;
-	}
+	img {
 
-	.menu_soustraction {
-
-		top: 0;
-		left: 50%;
-	}
-
-	.menu_multiplication {
-
-		bottom: 0;
-		right: 50%;
-	}
-
-	.menu_division {
-
-		bottom: 0;
-		left: 50%;
+		height: 100%;
 	}
 }
+
+.menu_addition {
+
+	bottom: 40%;
+	left: 12.5%;
+}
+
+.menu_soustraction {
+
+	bottom: 40%;
+	left: 53.125%;
+}
+
+.menu_multiplication {
+
+	bottom: 12.92%;
+	left: 12.5%;
+}
+
+.menu_division {
+
+	bottom: 12.92%;
+	left: 53.125%;
+}
+
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
