@@ -17,8 +17,9 @@ function (app, templates, $, Backbone)
     ({
 
         template: JST['game.html'],
-
-        template_button: JST['button_number.html'],
+		template_calculation: JST['calculation.html'],
+        template_button_number: JST['button_number.html'],
+        template_button_next: JST['button_next.html'],
         
         templateHelpers: function()
         { 
@@ -48,6 +49,7 @@ function (app, templates, $, Backbone)
             "win": "#win",
             "lose": "#lose",
             "realResult": "#realResult",
+			'calculation': '.calculation'
         },
 
 
@@ -57,42 +59,43 @@ function (app, templates, $, Backbone)
         {
             
             var level       = this.options.level;
-            var chiffre1	= Math.round(Math.random() * Math.pow(10, level));
-            var chiffre2	= Math.round(Math.random() * Math.pow(10, level));
+            var number1	= Math.round(Math.random() * Math.pow(10, level));
+            var number2	= Math.round(Math.random() * Math.pow(10, level));
  
             switch (this.options.operator)
             {
                 case "1":
                         this._operator_type = "+";
-                        this.total	= chiffre1 + chiffre2;
+                        this.total	= number1 + number2;
                     break;
                 case "2":
                         this._operator_type = "-";
-                        if (chiffre2 > chiffre1)
+                        if (number2 > number1)
                         {
-                            var temp = chiffre2;
-                            chiffre2 = chiffre1;
-                            chiffre1 = temp;
+                            var temp = number2;
+                            number2 = number1;
+                            number1 = temp;
                         }
-                        this.total	= chiffre1 - chiffre2;
+                        this.total	= number1 - number2;
                     break;
                 case "3":
                         this._operator_type = "x";
-                        this.total	= chiffre1 * chiffre2;
+                        this.total	= number1 * number2;
                     break;
                 case "4":
                         this._operator_type = "/";
-                        var chiffre1	= Math.round(Math.random() * (10*level));
-                        var chiffre2	= Math.round(Math.random() * (10*level)) + 1;
-                        chiffre1 = chiffre1 * chiffre2;
-                        this.total = chiffre1 / chiffre2;
+                        var number1	= Math.round(Math.random() * (10*level));
+                        var number2	= Math.round(Math.random() * (10*level)) + 1;
+                        number1 = number1 * number2;
+                        this.total = number1 / number2;
                     break;
             }
             
-            
+            this._number1 = number1;
+            this._number2 = number2;
 
             
-            this._line_account = chiffre1+" "+this._operator_type+" "+chiffre2+" = ";
+            this._line_account = number1+" "+this._operator_type+" "+number2+" = ";
 
         },
 
@@ -104,10 +107,28 @@ function (app, templates, $, Backbone)
 
             for (var i = 0; i <= 9; i++)
             {
-                var html = this.template_button({"button_number":i});
+                var html = this.template_button_number({"button_number":i});
 
                 $("#button_number_"+i, this.$el).html(html);
             }
+
+			this.ui.calculation.html(
+
+				this.template_calculation({
+
+					'number1': this._number1,
+					'number2': this._number2,
+					'operator': this._operator_type
+				})
+			);
+
+			this.ui.nexts.html(
+
+				this.template_button_next({
+
+					'button_next': document.webL10n.get('next')
+				})
+			);
         },
 
 
@@ -121,7 +142,7 @@ function (app, templates, $, Backbone)
             e.preventDefault();
             this.ui.keyboard.hide();
 
-            if (this.ui.total.html() == this.total)
+            if ($('#userResult').html() == this.total)
             {
                 this.ui.win.show();
             }
@@ -136,12 +157,13 @@ function (app, templates, $, Backbone)
 
         reset: function(e)
         {
-            this.ui.total.text('');            
+            //this.ui.total.text('');            
+            $('#userResult').text('');            
         },
 
         addNumber: function(e)
         {
-            this.ui.total.append($(e.target).data("value")); 
+           $('#userResult').append($(e.target).data("value")); 
         },
 
 
