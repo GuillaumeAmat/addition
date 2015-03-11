@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="320"
-   height="41.516861"
-   viewBox="0 0 320.00001 41.516861"
+   height="59"
+   viewBox="0 0 320.00001 59"
    id="svg3749"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -23,11 +23,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="141.85758"
-     inkscape:cy="-159.24155"
+     inkscape:zoom="1.4"
+     inkscape:cx="150.97839"
+     inkscape:cy="-10.883514"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -57,18 +57,18 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-440.28527,-314.46091)">
+     transform="translate(-440.28527,-296.97777)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52.00400162px;line-height:125%;font-family:Lavi;-inkscape-font-specification:'Lavi, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="600.2345"
-       y="355.29218"
+       y="339.29218"
        id="text4600"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4602"
          x="600.2345"
-         y="355.29218"
+         y="339.29218"
          dx="0 0 0">Je calcule</tspan></text>
   </g>
 </svg>
