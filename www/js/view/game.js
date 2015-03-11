@@ -17,6 +17,8 @@ function (app, templates, $, Backbone)
     ({
 
         template: JST['game.html'],
+
+        template_button: JST['button_number.html'],
         
         templateHelpers: function()
         { 
@@ -99,6 +101,13 @@ function (app, templates, $, Backbone)
             this.ui.keyboard.show();
             this.ui.win.hide();
             this.ui.lose.hide();
+
+            for (var i = 0; i <= 9; i++)
+            {
+                var html = this.template_button({"button_number":i});
+
+                $("#button_number_"+i, this.$el).html(html);
+            }
         },
 
 

@@ -22,7 +22,7 @@ a {
   text-decoration:none;  
 }
 
-ul
+ul, form
 {
     margin:0;
     padding:0;
@@ -53,6 +53,11 @@ button {
     margin:0;
     border:0;
 	background-color:transparent;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0
 }
 
 .container {
@@ -176,10 +181,13 @@ button {
 }
 #keyboard
 {
-    
+    position:absolute;
+    background-color:red;
     text-align:center;
-    width:80%;
+    width:46.875%;
     margin:auto;
+    bottom:14%;
+    left:26.56%;
 }
 
 .buttons_level
@@ -199,11 +207,13 @@ button {
 {
 }
 
-.number span,  #submit span, #reset span
+.number
 {
-    position:relative;
-    top: -35%;
-    left: -45%;
+    width:30.66%;
+
+    img {
+        width:100%
+        }
 }
 
 
