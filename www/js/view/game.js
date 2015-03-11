@@ -20,6 +20,7 @@ function (app, templates, $, Backbone)
 		template_calculation: JST['calculation.html'],
         template_button_number: JST['button_number.html'],
         template_button_next: JST['button_next.html'],
+		template_title: JST['title.html'],
 
         templateHelpers: function()
         {
@@ -41,12 +42,12 @@ function (app, templates, $, Backbone)
 
         ui:
         {
+            "title": ".end_title",
             "numbers": ".number",
             "nexts": ".next",
             "keyboard": "#keyboard",
             "reset": "#reset",
-            "win": "#win",
-            "lose": "#lose",
+            "fireworks": ".fireworks",
 			'calculation': '.calculation'
         },
 
@@ -102,8 +103,6 @@ function (app, templates, $, Backbone)
             app.radio.command('buttonBackHome:show');
 
             this.ui.keyboard.show();
-            this.ui.win.hide();
-            this.ui.lose.hide();
 
             for (var i = 0; i <= 9; i++)
             {
@@ -111,6 +110,7 @@ function (app, templates, $, Backbone)
 
                 $("#button_number_"+i, this.$el).html(html);
             }
+
 
 			this.ui.calculation.html(
 
@@ -144,7 +144,15 @@ function (app, templates, $, Backbone)
 
             if ($('#userResult').html() == this.total)
             {
-                this.ui.win.show();
+                 this.ui.title.html(
+
+                    this.template_title({
+
+                        'text': document.webL10n.get('win')
+                    })
+                );
+                this.ui.fireworks.show();
+
             }
             else
             {
@@ -152,8 +160,17 @@ function (app, templates, $, Backbone)
                 $('#red_line').css("width", $('#userResult').width());
                 $('#good_result').text(this.total);
                 $('#good_result_conteneur').show();
-                this.ui.lose.show();
+
+                this.ui.title.html(
+
+                    this.template_title({
+
+                        'text': document.webL10n.get('lose')
+                    })
+                );
+
             }
+            this.ui.nexts.show();
             this.ui.nexts.focus();
         },
 
