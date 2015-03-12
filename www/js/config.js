@@ -11,12 +11,7 @@ requirejs.config({
 		'jquery': '../bower_components/jquery/dist/jquery.min',
 	},
 
-	deps: [
-
-		'app',
-		'backbone',
-		'marionette',
-	],
+	deps: ['app'],
 
 	callback: function (app) {
 
