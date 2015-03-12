@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.boaz.je-calcule" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="fr.boaz.je-calcule" version="0.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Je calcule</name>
     <description>
         Application mobile et web d'entraînement au calcul pour les enfants
     </description>
-    <author email="contact@boaz.fr" href="http://boaz.fr">
+    <author email="contact@boaz.fr" href="https://github.com/theFrenchBoaz/je-calcule">
         Boaz
     </author>
 
