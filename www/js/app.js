@@ -2,6 +2,7 @@
 
 define([
 
+	'jquery',
 	'underscore',
 	'backbone',
 	'marionette',
@@ -10,6 +11,7 @@ define([
 ],
 function (
 
+	$,
 	_,
 	Backbone,
 	Marionette,
@@ -42,19 +44,20 @@ function (
 
 			$(window).on('resize', function () {
 
-                var hauteur = container.height();
-                var largeur = (hauteur * 320 / 480);
+                var hauteur = window.innerHeight,
+				largeur = (hauteur * 320 / 480);
 
-                if (largeur > $('body').width())
-                {
-                    largeur = $('body').width();
+                if (largeur > window.innerWidth) {
+
+                    largeur = window.innerWidth;
                     hauteur = (largeur * 480 / 320);
                 }
+				
 				container.width(largeur);
 				container.height(hauteur);
 			})
 			.trigger('resize');
-            
+
 
 
 			this._buttonBackHomeView = new buttonBackHomeView();
