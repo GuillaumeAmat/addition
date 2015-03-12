@@ -2,7 +2,6 @@
 
 define([
 
-	'app',
 	'backbone',
 	'view/home',
 	'view/level',
@@ -10,7 +9,6 @@ define([
 ],
 function (
 
-	app,
 	Backbone,
 	homeView,
 	levelView,
@@ -20,7 +18,7 @@ function (
 	'use strict';
 
 
-	var router = Backbone.Router.extend({
+	return Backbone.Router.extend({
 
 		routes: {
 
@@ -29,14 +27,21 @@ function (
 			'game/:operator/:level': 'routeGame',
 		},
 
+		initialize: function () {
+
+			this.radio = Backbone.Wreqr.radio.channel('global');
+
+			Backbone.history.start();
+		},
+
 		routeDefault: function () {
 
-			app.getRegion('screen').show( new homeView() );
+			this.radio.reqres.request('region', 'screen').show( new homeView() );
 		},
 
 		routeLevel: function (operator) {
 
-			app.getRegion('screen').show(
+			this.radio.reqres.request('region', 'screen').show(
 
 				new levelView ({
 
@@ -47,7 +52,7 @@ function (
 
 		routeGame: function (operator, level) {
 
-			app.getRegion('screen').show(
+			this.radio.reqres.request('region', 'screen').show(
 
 				new gameView ({
 
@@ -57,6 +62,4 @@ function (
             );
 		},
 	});
-
-	return new router();
 });

@@ -5,7 +5,7 @@ define([
 	'underscore',
 	'backbone',
 	'marionette',
-	'backbone.radio',
+	'router',
 	'view/buttonBackHome'
 ],
 function (
@@ -13,7 +13,7 @@ function (
 	_,
 	Backbone,
 	Marionette,
-	radio,
+	router,
 	buttonBackHomeView
 ) {
 
@@ -23,10 +23,11 @@ function (
 
 		initialize: function(options) {
 
-			this.radio = Backbone.Radio.channel('global');
-
 			var self = this,
 			container = $('.container');
+
+
+			this.radio = Backbone.Wreqr.radio.channel('global');
 
 
 			this.addRegions({
@@ -34,6 +35,9 @@ function (
 				'screen': '.screen',
 				'button_back_home': '.button_back_home'
 			});
+
+			this.radio.reqres.setHandler('region', this.replyRegion, this);
+
 
 
 			$(window).on('resize', function () {
@@ -43,43 +47,34 @@ function (
 			.trigger('resize');
 
 
-			Marionette.Behaviors.behaviorsLookup = function() {
 
-				return self.behaviors;
-			}
+			this._buttonBackHomeView = new buttonBackHomeView();
+			this._buttonBackHomeView.$el.hide();
 
+			self.getRegion('button_back_home').show( self._buttonBackHomeView );
 
-			this.view.buttonBackHomeView = new buttonBackHomeView();
-			this.view.buttonBackHomeView.$el.hide();
+			this.radio.commands.setHandlers({
 
-			self.getRegion('button_back_home').show( self.view.buttonBackHomeView );
+				'buttonBackHome:show': function () {
 
-			this.radio.comply('buttonBackHome:show', function () {
+					self._buttonBackHomeView.$el.show();
+				},
+				'buttonBackHome:hide': function () {
 
-				self.view.buttonBackHomeView.$el.show();
-			});
-
-			this.radio.comply('buttonBackHome:hide', function () {
-
-				self.view.buttonBackHomeView.$el.hide();
+					self._buttonBackHomeView.$el.hide();
+				}
 			});
 		},
 
 		onStart: function (options) {
 
-			Backbone.history.start();
+			new router();
 		},
 
+		replyRegion: function (regionName) {
 
-		behaviors: {},
-		collection: {},
-		model: {},
-		view: {},
-
-		var: {
-
-			currentScreen: null
-		}
+			return this.getRegion( regionName );
+		},
 	});
 
 	return new app();

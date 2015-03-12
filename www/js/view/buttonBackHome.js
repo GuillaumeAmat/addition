@@ -1,5 +1,14 @@
 
-define(['app', 'templates', 'jquery', 'backbone'], function (app, templates, $, Backbone) {
+
+define([
+
+	'marionette',
+	'templates',
+],
+function (
+
+	Marionette
+) {
 
 	'use strict';
 

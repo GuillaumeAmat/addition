@@ -1,13 +1,18 @@
 
-define(
-    [
-        'app',
-        'templates',
-        'jquery',
-        'backbone'
-    ],
-function (app, templates, $, Backbone)
-{
+
+define([
+
+	'jquery',
+	'backbone',
+	'marionette',
+	'templates',
+],
+function (
+
+	$,
+	Backbone,
+	Marionette
+) {
 
     'use strict';
 
@@ -50,6 +55,12 @@ function (app, templates, $, Backbone)
             "fireworks": ".fireworks",
 			'calculation': '.calculation'
         },
+
+
+        initialize: function () {
+
+			this.radio = Backbone.Wreqr.radio.channel('global');
+		},
 
 
 
@@ -100,7 +111,7 @@ function (app, templates, $, Backbone)
 
         onRender:function()
         {
-            app.radio.command('buttonBackHome:show');
+			this.radio.commands.execute('buttonBackHome:show');
 
             this.ui.keyboard.show();
 
