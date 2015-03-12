@@ -21,13 +21,9 @@ function (
 
 	'use strict';
 
-	var app = Marionette.Application.extend({
+	return Marionette.Application.extend({
 
 		initialize: function(options) {
-
-			var self = this,
-			container = $('.container');
-
 
 			this.radio = Backbone.Wreqr.radio.channel('global');
 
@@ -41,6 +37,7 @@ function (
 			this.radio.reqres.setHandler('region', this.replyRegion, this);
 
 
+			var $container = $('.container');
 
 			$(window).on('resize', function () {
 
@@ -52,13 +49,28 @@ function (
                     largeur = window.innerWidth;
                     hauteur = (largeur * 480 / 320);
                 }
-				
-				container.width(largeur);
-				container.height(hauteur);
+
+				$container.width(largeur);
+				$container.height(hauteur);
 			})
 			.trigger('resize');
+		},
 
+		onStart: function (options) {
 
+			var self = this;
+
+			$(window).on('localized', function () {
+
+				self.onLocalized();
+			});
+
+			require(['webL10n']);
+		},
+
+		onLocalized: function () {
+
+			var self = this;
 
 			this._buttonBackHomeView = new buttonBackHomeView();
 			this._buttonBackHomeView.$el.hide();
@@ -76,9 +88,6 @@ function (
 					self._buttonBackHomeView.$el.hide();
 				}
 			});
-		},
-
-		onStart: function (options) {
 
 			new router();
 		},
@@ -88,6 +97,4 @@ function (
 			return this.getRegion( regionName );
 		},
 	});
-
-	return new app();
 });

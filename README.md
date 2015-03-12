@@ -14,6 +14,20 @@ Application mobile et web d'entraînement au calcul pour les enfants
 
     grunt; grunt watch
 
+### Compilation
+
+#### Application web
+
+    grunt build
+
+Le résultat de la compilation se trouve dans le dossier `dist`.
+
+#### Application empaquetée
+
+    cordova prepare
+
+Le résultat se trouve dans le dossier `platforms`.
+
 ## Génération des icônes
 
 Chaque plateforme (Firefox OS, Android, iOS, etc.) ont des besoins spécifiques en taille d'icône.
