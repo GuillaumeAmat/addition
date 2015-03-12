@@ -35,6 +35,10 @@ a {
   text-decoration:none;
 }
 
+img {
+  border:none;
+}
+
 ul, form
 {
     margin:0;
@@ -88,6 +92,7 @@ button::-moz-focus-inner {
 	&.toto {
 
 		width: 11%;
+		height: 6.46%;
 		left: 86.875%;
 		bottom: 10.2%;
 	}
@@ -95,6 +100,7 @@ button::-moz-focus-inner {
 	&.calcul {
 
 		width: 19%;
+		height: 5.21%;
 		left: 80%;
 		bottom: 94%;
 	}
@@ -102,6 +108,7 @@ button::-moz-focus-inner {
 	&.morpion {
 
 		width: 10%;
+		height: 6.25%;
 		left: 3%;
 		bottom: 71%;
 	}
@@ -120,6 +127,7 @@ button::-moz-focus-inner {
 
 	position: absolute;
 	width: 89.06%;
+	height: 0.625%;
 	left: 8.44%;
 	bottom: 6.25%;
 }
@@ -128,6 +136,7 @@ button::-moz-focus-inner {
 
 	position: absolute;
 	width: 8.4375%;
+	height: 3.125%;
 	left: 2.2%;
 	bottom: 95%;
 }
@@ -136,6 +145,7 @@ button::-moz-focus-inner {
 
 	position: absolute;
 	width: 100%;
+	height: 12.29%;
 	left: 0%;
 	bottom: 83.75%;
 }
@@ -146,6 +156,7 @@ button::-moz-focus-inner {
 	left: 33.75%;
 	bottom: 68.125%;
 	width: 32.5%;
+	height: 8.96%;
 }
 
 
@@ -190,18 +201,40 @@ button::-moz-focus-inner {
 }
 
 
-
-.menu_level {
-
+#button_level_1, #button_level_2, #button_level_3, #button_level_4, #button_level_5
+{
     position: absolute;
     left: 16.25%;
-    bottom: 13.96%;
     width: 67.5%;
-
-	li {
-	    margin-bottom: 1.25%
-	}
+    height:11.25%;
 }
+
+#button_level_1
+{
+    bottom: 63.96%;
+}
+
+#button_level_2
+{
+    bottom: 51.46%;
+}
+
+#button_level_3
+{
+    bottom: 38.96%;
+}
+
+#button_level_4
+{
+    bottom: 26.46%;
+}
+
+#button_level_5
+{
+    bottom: 13.96%;
+}
+
+
 
 
 
@@ -223,21 +256,12 @@ button::-moz-focus-inner {
     text-align:right;
 }
 
-#keyboard
-{
-    // position:absolute;
-    // text-align:center;
-    // width:46.875%;
-    // bottom:14%;
-    // left:26.56%;
-	background-color: red;
-}
-
 
 .number, .number-other {
 
 	position: absolute;
     width: 14.375%;
+    height: 11.25%;
     cursor:pointer;
 
     img {
@@ -250,7 +274,7 @@ button::-moz-focus-inner {
 #button_number_4,
 #button_number_7,
 #button_number_0 {
-
+    
 	left: 26.5625%;
 }
 
@@ -306,15 +330,27 @@ button::-moz-focus-inner {
 	bottom: 13.96%;
 	left: 26.5625%;
     width:46.875%;
+    height: 11.25%;
     display:none;
     cursor:pointer;
 }
 
+.calculation {
+
+	position: absolute;
+	width: 93.75%;
+	height: 33.75%;
+	top: 5.25%;
+	right: 25.5%;
+}
+
 .end_title
 {
-    position:absolute;
-    width:100%;
-    bottom:40.83%;
+	position: absolute;
+    width: 100%;
+   	height: 12.29%;
+    bottom: 40.83%;
+    left: 0%;
 }
 
 .fireworks
@@ -324,4 +360,5 @@ button::-moz-focus-inner {
     left:15.625%;
     bottom:38.541%;
     width:68.75%;
+    height:23.54%;
 }

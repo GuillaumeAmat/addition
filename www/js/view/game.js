@@ -142,7 +142,7 @@ function (app, templates, $, Backbone)
             e.preventDefault();
             this.ui.keyboard.hide();
 
-            if ($('#userResult').html() == this.total)
+            if ($('#userResult').text() == this.total)
             {
                  this.ui.title.html(
 
@@ -183,7 +183,7 @@ function (app, templates, $, Backbone)
 
         addNumber: function(e)
         {
-           $('#userResult').append($(e.target).data("value"));
+            $('#userResult').append(e.currentTarget.dataset.number);
         },
 
 
