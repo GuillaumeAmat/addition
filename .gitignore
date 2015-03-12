@@ -1,6 +1,6 @@
 platforms
 node_modules
-www/bower_components
-www/css/app.css
-www/templates/templates.js
-dist
+app/bower_components
+app/css/app.css
+app/templates/templates.js
+www

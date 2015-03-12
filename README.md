@@ -7,7 +7,7 @@ Application mobile et web d'entraînement au calcul pour les enfants
 ### Installation
 
     npm install
-    cd www; bower install
+    cd app; bower install
     cd ..; grunt
 
 ### Avant de développer
@@ -20,7 +20,7 @@ Application mobile et web d'entraînement au calcul pour les enfants
 
     grunt build
 
-Le résultat de la compilation se trouve dans le dossier `dist`.
+Le résultat de la compilation se trouve dans le dossier `www`.
 
 #### Application empaquetée
 

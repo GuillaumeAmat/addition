@@ -16,8 +16,8 @@ module.exports = function(grunt) {
 
 			build: [
 
-				'dist/bower_components',
-				'dist/templates',
+				'www/bower_components',
+				'www/templates',
 			]
 		},
 
@@ -25,8 +25,8 @@ module.exports = function(grunt) {
 
 			requirejs: {
 
-				src: 'www/bower_components/requirejs/require.js',
-				dest: 'www/js/require.js'
+				src: 'app/bower_components/requirejs/require.js',
+				dest: 'app/js/require.js'
 			},
 		},
 
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
 				files: {
 
-					'www/css/app.css': 'www/css/app.less'
+					'app/css/app.css': 'app/css/app.less'
 				}
 			}
 		},
@@ -49,12 +49,12 @@ module.exports = function(grunt) {
 
 					processName: function(filename) {
 
-						return filename.slice('www/templates/'.length, filename.length);
+						return filename.slice('app/templates/'.length, filename.length);
 					}
 				},
 				files: {
 
-					'www/templates/templates.js': ['www/templates/**/*.html']
+					'app/templates/templates.js': ['app/templates/**/*.html']
 				}
 			}
 		},
@@ -65,11 +65,11 @@ module.exports = function(grunt) {
 
 				options: {
 
-					appDir: 'www',
+					appDir: 'app',
 					baseUrl: 'js',
-					dir: 'dist',
+					dir: 'www',
 					modules: [{ 'name': 'app' }],
-					mainConfigFile: 'www/js/config.js',
+					mainConfigFile: 'app/js/config.js',
 					findNestedDependencies: true,
 					removeCombined: true,
 					logLevel: 1,
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 
 				files: [
 
-					'www/bower_components/requirejs/require.js'
+					'app/bower_components/requirejs/require.js'
 				],
 				tasks: ['copy:requirejs']
 			},
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 
 				files: [
 
-					'www/css/**/*.less'
+					'app/css/**/*.less'
 				],
 				tasks: ['less:default']
 			},
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
 
 				files: [
 
-					'www/templates/**/*.html'
+					'app/templates/**/*.html'
 				],
 				tasks: ['jst']
 			}
