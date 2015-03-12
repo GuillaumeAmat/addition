@@ -42,10 +42,19 @@ function (
 
 			$(window).on('resize', function () {
 
-				container.width( (container.height() * 320) / 480 );
+                var hauteur = container.height();
+                var largeur = (hauteur * 320 / 480);
+
+                if (largeur > $('body').width())
+                {
+                    largeur = $('body').width();
+                    hauteur = (largeur * 480 / 320);
+                }
+				container.width(largeur);
+				container.height(hauteur);
 			})
 			.trigger('resize');
-
+            
 
 
 			this._buttonBackHomeView = new buttonBackHomeView();
